@@ -18,15 +18,15 @@
         <div class="mdl-layout__header-row">
           <!-- Title -->
           <span class="mdl-layout-title">Commute Calculator</span>
-          <!-- Add spacer, to align navigation to the right -->
+          <!-- Aligns navigation to the right -->
           <div class="mdl-layout-spacer"></div>
-          <!-- Navigation. We hide it in small screens. -->
-          <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link">Pre-Release Software</a>
-            <p><span id="datetime"></span></p>
-            <script>
+            <!-- Delete line 24 once the program reaches stable -->
+            <a id="notice" class="mdl-navigation__link">Pre-Release</a>
+            <!-- Shows the current time in the header -->
+            <p id="clock" class="mdl-navigation__link"><span id="datetime"></span></p>
+            <script>              
               var time = new Date();
-              document.getElementById("datetime").innerHTML = time.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+              document.getElementById("datetime").innerHTML = time.toLocaleTimeString();
             </script>
           </nav>
         </div>
@@ -37,7 +37,7 @@
           <a class="mdl-navigation__link" onclick="About()" href="home.html">About</a>
 		  <script>
 		  function About() {
-			alert("Pre-release verison, created by the Bangor Uni team! :)");
+      alert("PLEASE NOTE: This version of the software is currently in a pre-release state and does not reflect the state of the final product.\n\nVersion 0.0 (February 2019)\n\nCreated by:\nAlex Lin-Vines\nCharlotte Smith\nDafydd Weightman\nJosh Morey\nKieran Davies\nWill Hughes")
 			}
 		  </script>
         </nav>
