@@ -3,29 +3,22 @@
   <head>
 	<title>Commute Calculator Alpha</title>
   <link rel="stylesheet" href="styles.css">
+
   <!-- Google Web Fonts -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-	<link rel="shortcut icon" type="image/png" href="favicon.gif"/>
+  <link rel="shortcut icon" type="image/png" href="favicon.gif"/>
+  
   <!-- Hosted master for Material Design Lite -->
   <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-light_blue.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script>
-	function startTime() {
-		var today = new Date();
-		var h = today.getHours();
-		var m = today.getMinutes();
-		m = checkTime(m);
-		document.getElementById('clock').innerHTML =
-		h + ":" + m;
-		var t = setTimeout(startTime, 500);
-	}
-	function checkTime(i) {
-		if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-		return i;
-	}
-</script>
+
+  <!-- HERE API Code Libraries -->
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Clock -->
 
   </head>
   <body onload="startTime()">
@@ -40,7 +33,7 @@
             <!-- Delete line 24 once the program reaches stable -->
             <a id="notice" class="mdl-navigation__link">Pre-Release</a>
             <!-- Shows the current time in the header -->
-            <a id="clock" class="mdl-navigation_link"><span id="datetime"></span></a>
+            <a id="clock" class="mdl-navigation_link"><script src="clock.js"></script></a>
           </nav>
         </div>
       </header>
@@ -50,7 +43,7 @@
           <a class="mdl-navigation__link" onclick="About()" href="home.html"><i class="material-icons" role="presentation">info</i> About</a>
 		  <script>
 		  function About() {
-      alert("PLEASE NOTE: This version of the software is currently in a pre-release state and does not reflect the state of the final product.\n\nVersion 0.0 (February 2019)\n\nCreated by:\nAlex Lin-Vines\nCharlotte Smith\nDafydd Weightman\nJosh Morey\nKieran Davies\nWill Hughes")
+      alert("PLEASE NOTE: This version of the software is currently in a pre-release state and does not reflect the state of the final product.\n\nVersion 0 (Feb. 2019)\nRouting data provided by HERE Technologies ©2019\n\nCreated by:\nAlex Lin-Vines\nCharlotte Smith\nDafydd Weightman\nJosh Morey\nKieran Davies\nWill Hughes")
 			}
 		  </script>
         </nav>
