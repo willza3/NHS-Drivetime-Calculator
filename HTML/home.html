@@ -16,11 +16,9 @@
 		var today = new Date();
 		var h = today.getHours();
 		var m = today.getMinutes();
-		var s = today.getSeconds();
 		m = checkTime(m);
-		s = checkTime(s);
 		document.getElementById('clock').innerHTML =
-		h + ":" + m + ":" + s;
+		h + ":" + m;
 		var t = setTimeout(startTime, 500);
 	}
 	function checkTime(i) {
@@ -42,11 +40,7 @@
             <!-- Delete line 24 once the program reaches stable -->
             <a id="notice" class="mdl-navigation__link">Pre-Release</a>
             <!-- Shows the current time in the header -->
-            <p id="clock"><span id="datetime"></span></p>
-            <script>              
-              var time = new Date();
-              document.getElementById("datetime").innerHTML = time.toLocaleTimeString();
-            </script>
+            <a id="clock" class="mdl-navigation_link"><span id="datetime"></span></a>
           </nav>
         </div>
       </header>
