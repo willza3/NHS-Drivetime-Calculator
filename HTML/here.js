@@ -15,6 +15,8 @@ var platform = new H.service.Platform({
 
   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
   var ui = H.ui.UI.createDefault(map, defaultLayers);
+  // Replaces the metric system with imperial measurements
+  ui.setUnitSystem(H.ui.UnitSystem.IMPERIAL);
 
 // Shows Map
 
