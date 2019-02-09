@@ -13,3 +13,7 @@ html, body {
 	color: white;
 	font-family: 'Roboto', sans-serif;
 }
+
+#map {
+	background-color: grey;
+}

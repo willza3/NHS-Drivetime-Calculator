@@ -1,3 +1,6 @@
+type="text/javascript"
+charset="UTF-8"
+
 var platform = new H.service.Platform({
     app_id: 'FOS7x9AxfWAnpKpjTGnV',
     app_code: 'Ypbj9r3Koexac-WWPBbe_A',
@@ -5,16 +8,15 @@ var platform = new H.service.Platform({
   });
 
   var pixelRatio = window.devicePixelRatio || 1;
-  var defaultLayers = platform.createDefaultLayers({
-    tileSize: pixelRatio === 1 ? 256 : 512,
-    ppi: pixelRatio === 1 ? undefined : 320
-  });
+  var defaultLayers = platform.createDefaultLayers();
 
   var map = new H.Map(document.getElementById('map'),
-  defaultLayers.normal.map, {pixelRatio: pixelRatio});
+  defaultLayers.normal.map);
 
   var behavior = new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
   var ui = H.ui.UI.createDefault(map, defaultLayers);
+
+// Shows Map
 
   function showMap(map){
     // Center map on Ysbyty Gwynedd
@@ -27,6 +29,8 @@ var platform = new H.service.Platform({
   }
 
   showMap(map);
+
+// Shows markers on local hospitals
 
   function showMarkers(map) {
     // Shows a marker on Ysbyty Gwynedd
@@ -51,3 +55,36 @@ var platform = new H.service.Platform({
   }
 
   showMarkers(map);
+
+// Shows information on mouse click
+
+function addMarkerToGroup(group, coordinate, html) {
+  var marker = new H.map.Marker(coordinate);
+  marker.setData(html);
+  group.addObject(marker);
+}
+
+function addInfoBubble(map) {
+  var group = new H.map.Group();
+
+  map.addObject(group);
+
+  // Adds event listener that opens the info bubble on click
+  group.addEventListener('tap', function (evt) {
+    var bubble = new H.ui.InfoBubble(evt.target.getPosition(), {
+        content: evt.target.getData()
+    });
+    ui.addBubble(bubble);
+  }, false);
+
+  addMarkerToGroup(group, {lat:53.209405, lng:-4.159840},
+    '<div><a href=\'http://www.google.co.uk\' >Ysbyty Gwynedd</a>' +
+    '</div><div >Anfield<br>Capacity: 45,362</div>' );
+
+  addMarkerToGroup(group, {lat:53.272108, lng:-3.495862},
+    '<div ><a href=\'http://www.reddit.com\' >Reddit</a>' +
+    '</div><div >Reddit<br>Capacity: 48,000</div>');
+}
+
+addInfoBubble();
+$('head').append('<link rel="stylesheet" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css" type="text/css" />');
