@@ -1,3 +1,5 @@
+// This is the clock shown in the top menu bar.
+
 function startTime() {
 		var today = new Date();
 		var h = today.getHours();
