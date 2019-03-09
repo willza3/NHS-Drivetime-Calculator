@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="51.521875%" y1="-4.68046875%" x2="51.521875%" y2="124.507812%" id="linearGradient-1">
+            <stop stop-color="#0072CE" offset="0%"></stop>
+            <stop stop-color="#003087" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="500" height="500" rx="55"></rect>
+        <g id="round-map-24px" transform="translate(83.000000, 83.000000)">
+            <polygon id="Path" points="0 0 334 0 334 334 0 334"></polygon>
+            <path d="M203.543079,69.0147087 L133.782101,44.5881759 C127.922179,42.4944731 121.504169,42.4944731 115.644247,44.4485958 L59.9749861,63.1523408 C48.6737076,67.0605861 41,77.6686803 41,89.6725764 L41,255.075098 C41,274.755904 60.6725959,288.155602 78.9499722,281.037013 L119.829906,265.124872 C122.899389,263.86865 126.387437,263.86865 129.456921,264.985291 L199.217899,289.411824 C205.077821,291.505527 211.495831,291.505527 217.355753,289.551404 L273.025014,270.847659 C284.326292,267.078994 292,256.33132 292,244.327424 L292,78.924902 C292,59.2440956 272.327404,45.8443976 254.050028,52.9629872 L213.170094,68.8751285 C210.100611,69.99177 206.752084,70.1313502 203.543079,69.0147087 Z M208.426348,263.170749 L124.713174,233.719329 L124.713174,70.8292511 L208.426348,100.280671 L208.426348,263.170749 Z" id="Shape" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

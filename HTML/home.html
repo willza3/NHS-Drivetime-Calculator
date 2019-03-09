@@ -1,58 +1,75 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-	<title>Teithio</title>
-  <link rel="stylesheet" href="styles.css">
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- Google Web Fonts -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
-  <link rel="shortcut icon" type="image/png" href="favicon.gif"/>
-  
-  <!-- Hosted master for Material Design Lite -->
-  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-light_blue.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<head>
+    <meta charset="utf-8">
+    <title>Tethio (Beta)</title>
 
-  <!-- HERE API Code Libraries -->
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
-  <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
-  <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    <!-- Bootstrap 4.3.1 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  </head>
-  <body onload="startTime()">
-    <!-- Always shows a header, even in smaller screens. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <span class="mdl-layout-title">Teithio</span>
-          <!-- Aligns navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
-            <!-- Delete line 24 once the program reaches stable -->
-            <a id="notice" class="mdl-navigation__link">Pre-Release</a>
-            <!-- Shows the current time in the header -->
-            <a id="clock" class="mdl-navigation_link"><script src="clock.js"></script></a>
-          </nav>
+    <!-- HERE Maps API -->
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-ui.js"></script>
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+
+</head>
+
+<body onload="startTime()">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <!-- Icon and app name-->
+            <img src="src/icon.svg" width="30" height="30" class="d-inline-block align-top">
+            <b> Tethio</b> Beta
+        </a>
+
+        <!-- Hyperlinks -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+
+            <!-- Navbar Clock -->
+            <span class="navbar-text">
+                <a id="clock">
+                    <script src="clock.js"></script></a>
+            </span>
+
         </div>
-      </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Menu</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" onclick="About()" href="home.html"><i class="material-icons" role="presentation">info</i> About</a>
-		  <script>
-		  function About() {
-      alert("PLEASE NOTE: This version of the software is currently in a pre-release state and does not reflect the state of the final product.\n\nVersion 0 (Mar. 2019)\nRouting data provided by HERE Technologies ©2019\n\nCreated by:\nAlex Lin-Vines\nDafydd Weightman\nJosh Morey\nKieran Davies\nWill Hughes")
-			}
-		  </script>
-        </nav>
-      </div>
-      <main class="mdl-layout__content">
-          <div class="page-content" style="width: 600px; height: 400px" id="map"><script src="here.js"></script></div>
-      </main>
+    </nav>
+
+    <!-- Container -->
+    <div class="container-fluid">
+
+        <!-- Map -->
+        <div id="map" style="width: 100%; height: 400px; background: grey"><script src="here.js"></script> 
     </div>
-  </body>
+
+    <!-- Optional JavaScript -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
