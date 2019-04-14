@@ -6,8 +6,8 @@ var myLatLng = {
     lng: 0.0
 };
 var mapOptions = {
-    center: myLatLng,
-    zoom: 1,
+    center: {lat: 53.229702, lng: -4.123974},
+    zoom: 10,
     mapTypeId: google.maps.MapTypeId.ROADMAP
 };
 
@@ -72,40 +72,7 @@ function routing() {
     ++i;
 }
 
-// Clear results
-
-function clearRoute() {
-    document.getElementById("results").style.display = "none";
-    document.getElementById("destination-1").value = "";
-    while (s <= x) {
-        document.getElementById("location-" + s).value = "";
-        s++;
-      }
-    directionsDisplay.setDirections({
-        routes: []
-    });
-
-}
-
-function appendRow() {
-    document.getElementById("location-" + x++).readOnly = true;
-    /* var d = document.getElementById('Origin');
-     d.innerHTML += "<input type='text' id='location-"+ x +"' placeholder='Enter location "+x+"...'><br >"; */
-
-    var form = document.getElementById("Origin");
-    var input = document.createElement("input");
-    input.name = "location-" + x;
-    input.type = "text";
-    input.id = "location-" + x;
-    input.placeholder = "Enter location " + x + "...";
-    var br = document.createElement("br");
-    form.appendChild(input);
-    form.appendChild(br);
-
-    autoComp();
-}
-
-// Create autocomplete objects for all inputs
+// Google Maps Autocomplete
 
 var options = {
     componentRestrictions: {
