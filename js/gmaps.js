@@ -1,3 +1,6 @@
+/* This script powers all things related to the Google Maps API. Generally speaking...
+   DO NOT TOUCH ANY OF THESE VALUES UNLESS YOU ARE FAMILIAR WITH THE API AND YOU KNOW WHAT YOU ARE DOING. */
+
 var x = 1;
 var i = 1;
 var s = 1;
