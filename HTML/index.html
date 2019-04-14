@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Favicons -->
-    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
-    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="src/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="src/favicon.ico" />
 
     <!-- Bootstrap 4.3.1 CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <!-- Icon and app name-->
-            <img src="icon.svg" width="30" height="30" class="d-inline-block align-top">
+            <img src="src/icon.svg" width="30" height="30" class="d-inline-block align-top">
             <b> NHS</b> Drivetime Calculator
         </a>
 
@@ -62,10 +62,10 @@
     </div>
 
     <!-- Container -->
-    <ul class="flex-container">
-        <li class="flex-item" id="map">
-        </li>
-    </ul>
+
+    <div class="container-fluid">
+        <li class="flex-item" id="map"></li>
+    </div>
 
     <div id="inputs" class="inputs">
         <form>
@@ -97,6 +97,6 @@
     crossorigin="anonymous"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDehUM-QEPB9bI0m_-IFkhto1NkYW65F4I&libraries=places"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/main.js"></script>
+<script src="js/gmaps.js"></script>
 
 </html>
