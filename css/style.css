@@ -3,7 +3,7 @@
 
 .flex-container {
   padding: 0;
-  margin: 10px;
+  margin: 15px;
   list-style: none;
 
   display: -webkit-box;
@@ -18,8 +18,9 @@
   background: slategray;
   padding: 5px;
   width: 750px;
-  height: 350px;
+  height: 550px;
   margin-top: 10px;
+  margin-bottom: 15px;
 
   line-height: 150px;
   color: white;
@@ -28,27 +29,20 @@
   text-align: center;
 }
 
-.inputs{
-  margin: auto;
-  width: 39%;
-  padding: 1px;
-}
-.button{
-    background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
-    text-transform: uppercase;
-    text-decoration: none;
-    outline:none;
-    color: black;
-    border: none;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: ease-in-out .1s;
+#mapC {
+  height: 500px;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-.button:hover{    
-    background-image: linear-gradient(-225deg, #A445B2 0%, #D41872 52%, #FF0066 100%);
-    transform: scale(1.015);
-    transition: ease-in .1s;
+#map {
+  background: slategray;
+  height: 100%;
+  width: 100%;
+}
+
+#inputs {
+  width: 30%;
 }
 
 
