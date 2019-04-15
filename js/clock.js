@@ -1,4 +1,4 @@
-// This script powers the clock that is found in the navbar
+/* This script powers the small clock that lives in the navigation bar. */
 
 function startTime() {
     var today = new Date();

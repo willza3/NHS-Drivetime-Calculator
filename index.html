@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Drivetime Calculator (Pre-release)</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/png" href="src/favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="src/favicon.ico" />
+
+    <!-- Bootstrap 4.3.1 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body onload="startTime()">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <!-- Icon and app name-->
+            <img src="src/icon.svg" width="30" height="30" class="d-inline-block align-top">
+            <b> NHS</b> Drivetime Calculator
+        </a>
+
+        <!-- Hyperlinks -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+
+            <!-- Navbar Clock -->
+            <span class="navbar-text">
+                <a id="clock">
+                    <script src="clock.js"></script>
+                </a>
+            </span>
+
+        </div>
+    </nav>
+
+    <div class="alert alert-danger" role="alert">
+        <b>You are currently using the test branch.</b> Make sure that any issues you find are reported on the GitHub
+        <a href="https://github.com/willza3/teithio/issues" class="alert-link">issue tracker.</a>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <!-- Container -->
+
+    <div class="container-fluid" id="mapC">
+        <li class="flex-item" id="map"></li>
+    </div>
+
+    <!-- New UI -->
+    <div class="container-fluid">
+        <form id="inputs">
+
+            <!-- Origin -->
+
+            <div class="form-group">
+                <label for="origin">Origin</label>
+                <input type="text" class="form-control" id="location-1" placeholder="Enter origin location..." required>
+                <button type="button" class="btn btn-light" onclick="addRow()">Add Row</button>
+            </div>
+
+            <!-- Destination -->
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <input type="text" class="form-control" id="destination-1" placeholder="Enter destination location..." required>
+            </div>
+
+            <!-- Buttons-->
+            <button type="button" class="btn btn-success" onclick="calcRoute();">Get Directions</button>
+            <button type="button" class="btn btn-danger" onclick="clearRoute();">Clear</button>
+        </form>
+    </div>
+
+    <!-- Old UI
+    <div id="inputs" class="inputs">
+        <form>
+            <div id="Origin">Origin:<br>
+                <input type="text" id="location-1" name="origin" placeholder="Enter location..."><br>
+            </div>
+            <button button class="button" onclick="appendRow()" type="button" value="Add Row">Add Row</button><br>
+            <div id="Destination">Destination:<br>
+                <input type="text" id="destination-1" name="destination" placeholder="Enter a last location...">
+            </div>
+            <div class="row">
+                <button class="button" type="button" onclick="clearRoute();">Clear</button>
+                <button class="button" type="button" onclick="calcRoute();">Submit</button>
+            </div>
+        </form>
+ </div> -->
+
+ <!-- Results -->
+<div class="container-fluid">
+    <strong>Results</strong>
+    <div id="results">
+        <ul id="resultlist">
+        </ul>
+    </div>
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDehUM-QEPB9bI0m_-IFkhto1NkYW65F4I&libraries=places">
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/gmaps.js"></script>
+<script src="js/form.js"></script>
+
+</html>
