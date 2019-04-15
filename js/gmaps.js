@@ -37,7 +37,7 @@ function sleep(ms) {
 function calcRoute() {
     //create request
     if (document.getElementById("location-" + i).value == "" || document.getElementById("destination-1").value == "") {
-        alert("Please Enter Two Locations");
+        alert("An origin location and a destination must be entered. Please try again.");
     } else {
         do {
             routing();
