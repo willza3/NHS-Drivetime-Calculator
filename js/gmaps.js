@@ -91,3 +91,22 @@ function autoComp() {
 }
 
 autoComp();
+
+// Add Markers
+var marker = new google.maps.Marker({
+    position: {lat: 53.209058, lng: -4.159831},
+    map: map,
+    title: 'Ysbyty Gwynedd',
+});
+
+var marker = new google.maps.Marker({
+    position: {lat: 53.272120, lng: -3.495862},
+    map: map,
+    title: 'Ysbyty Glan Clwyd',
+});
+
+var marker = new google.maps.Marker({
+    position: {lat: 52.940630, lng: -4.149402},
+    map: map,
+    title: "Ysbyty Alltwen",
+});
