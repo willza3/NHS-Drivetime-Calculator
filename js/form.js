@@ -21,19 +21,16 @@ autoComp();
 
 function appendRow() {
     document.getElementById("location-" + x++).readOnly = true;
-    /* var d = document.getElementById('Origin');
-     d.innerHTML += "<input type='text' id='location-"+ x +"' placeholder='Enter location "+x+"...'><br >"; */
-
     var form = document.getElementById("Origin");
     var input = document.createElement("input");
     input.name = "location-" + x;
     input.type = "text";
+    input.className = "form-control";
     input.id = "location-" + x;
     input.placeholder = "Enter location " + x + "...";
     var br = document.createElement("br");
-    form.appendChild(input);
     form.appendChild(br);
-
+    form.appendChild(input);
     autoComp();
 }
 
