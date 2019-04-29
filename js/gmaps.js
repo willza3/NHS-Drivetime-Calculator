@@ -1,9 +1,9 @@
 /* This script powers all things related to the Google Maps API. Generally speaking...
    DO NOT TOUCH ANY OF THESE VALUES UNLESS YOU ARE FAMILIAR WITH THE API AND YOU KNOW WHAT YOU ARE DOING. */
 
-var x = 1;
-var i = 1;
-var s = 1;
+// var x = 1;
+// var s = 1;
+// var i = 1;
 var myLatLng = {
     lat: 0.0,
     lng: 0.0
@@ -36,27 +36,26 @@ function sleep(ms) {
 // Define calcRoute function
 function calcRoute() {
     //create request
-    if (document.getElementById("location-" + i).value == "" || document.getElementById("destination-1").value == "") {
+    if (document.getElementById("location-1").value === "" || document.getElementById("destination-1").value === "") {
         alert("An origin location and a destination must be entered. Please try again.");
     } else {
-        do {
+        for(i=1; i <= rows; i++){
             routing();
-        } while (i <= x)
-
+        }
     }
 }
 
 function routing() {
     var request = {
-        origin: document.getElementById("location-" + i).value,
-        destination: document.getElementById("destination-1").value,
+        origin: document.getElementById("location-1").value,
+        destination: document.getElementById("destination-" + i).value,
         travelMode: google.maps.TravelMode.DRIVING,
         unitSystem: google.maps.UnitSystem.IMPERIAL
-    }
+    };
 
     // Routing
     directionsService.route(request, function (result, status) {
-        if (status == google.maps.DirectionsStatus.OK) {
+        if (status === google.maps.DirectionsStatus.OK) {
             //Get distance and time   
             document.getElementById("results").style.display = "block";
             var resultText = result.routes[0].legs[0].start_address + " to " + result.routes[0].legs[0].end_address + " is " + result.routes[0].legs[0].distance.text + " and will take " + result.routes[0].legs[0].duration.text;
@@ -67,12 +66,25 @@ function routing() {
             li.id = "loc" + i;
             li.innerHTML = resultText;
             document.getElementById("resultlist").appendChild(li);
-            
+
+            $.ajax({
+                url:'insert.php',
+                method:'POST',
+                data:{
+                    originAddress:result.routes[0].legs[0].start_address,
+                    destinationAddress:result.routes[0].legs[0].end_address,
+                    distance:result.routes[0].legs[0].distance.text
+                },
+                success:function(data){
+                    alert(data);
+                }
+            });
+
         } else {
             alert("Can't find Address! Please try again!");
         }
     });
-    ++i;
+    // ++i;
 }
 
 // Google Maps Autocomplete
@@ -81,13 +93,4 @@ var options = {
     componentRestrictions: {
         country: "UK"
     }
-}
-
-function autoComp() {
-    var input1 = document.getElementById("location-" + x);
-    var autocomplete1 = new google.maps.places.Autocomplete(input1, options);
-    var input2 = document.getElementById("destination-1");
-    var autocomplete2 = new google.maps.places.Autocomplete(input2, options);
-}
-
-autoComp();
+};
