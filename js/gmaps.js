@@ -73,7 +73,8 @@ function routing() {
                 data:{
                     originAddress:result.routes[0].legs[0].start_address,
                     destinationAddress:result.routes[0].legs[0].end_address,
-                    distance:result.routes[0].legs[0].distance.text
+                    distance:result.routes[0].legs[0].distance.text,
+                    driveTime:result.routes[0].legs[0].duration.text
                 },
                 success:function(data){
                     alert(data);
